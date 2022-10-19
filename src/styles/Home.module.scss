@@ -1,0 +1,80 @@
+/*
+ * Home.module.scss
+ * author: evan kirkiles
+ * created on Tue Oct 18 2022
+ * 2022 the nobot space, 
+ */
+@import './mixins';
+
+.container {
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 15% 10px;
+
+  & h3 {
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.6;
+  }
+
+  & h2 {
+    font-weight: 400;
+  }
+
+  & h1 {
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+  }
+
+  @include respond-to('xsmall') {
+    width: 80%;
+  }
+
+  @include respond-to('small') {
+    width: 70%;
+  }
+}
+
+.edition {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.link_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 30px 0px;
+}
+
+.link_section {
+  opacity: 0.3;
+  font-weight: 400;
+  margin: 10px 0px !important;
+}
+
+.link_display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.link_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

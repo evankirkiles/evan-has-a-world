@@ -1,0 +1,128 @@
+/*
+ * Layout.module.scss
+ * author: evan kirkiles
+ * created on Tue Oct 18 2022
+ * 2022 the nobot space, 
+ */
+@import '../../styles/mixins';
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: url('/17632530.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    image-rendering: pixelated;
+  }
+}
+
+.printing_block_tiny {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: $background;
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.contents {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fadeup 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  gap: 5px;
+  color: $foreground;
+
+  @include respond-to('xsmall') {
+    width: 80%;
+    max-width: 600px;
+    height: 80%;
+  }
+}
+
+$outline_offset: 15px;
+.contents_outline {
+  display: none;
+  border: 2px solid $background;
+  position: absolute;
+  top: -$outline_offset;
+  left: -$outline_offset;
+  width: calc(100% + $outline_offset * 2);
+  height: calc(100% + $outline_offset * 2);
+  opacity: 0.6;
+
+  @include respond-to('xsmall') {
+    display: block;
+  }
+}
+
+.printing_block {
+  width: 100%;
+  height: 20px;
+  background-color: $foreground;
+}
+
+.content_container {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.printing_row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  & > *:nth-of-type(1) {
+    place-self: start start;
+  }
+
+  & > *:nth-of-type(2) {
+    place-self: center center;
+  }
+
+  & > *:nth-of-type(3) {
+    place-self: end end;
+  }
+}
+
+.inner_printing_block {
+  @extend .printing_block;
+  width: unset;
+  aspect-ratio: 1;
+}
