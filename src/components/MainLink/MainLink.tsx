@@ -6,6 +6,33 @@
  */
 import s from './MainLink.module.scss';
 
-const MainLink: React.FC = function MainLink() {};
+type MainLink̦Props = {
+  title: string;
+  href: string;
+  pageNum: number;
+  description: string;
+};
+
+const MainLink: React.FC<MainLink̦Props> = function MainLink({
+  title,
+  href,
+  pageNum,
+  description,
+}) {
+  return (
+    <a
+      href={href}
+      className={s.container}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img className={s.favicon} src={`${href}/favicon.ico`} alt="favicon" />
+      <div className={s.title}>{title}</div>
+      <div className={s.dots}></div>
+      <div>{pageNum}</div>
+      <div className={s.description}>{description}</div>
+    </a>
+  );
+};
 
 export default MainLink;

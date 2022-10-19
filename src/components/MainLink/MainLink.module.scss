@@ -5,3 +5,52 @@
  * 2022 the nobot space, 
  */
 @import '../../styles/mixins';
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template:
+    'e a b c' auto
+    'e d d d' auto
+    / auto auto 1fr auto;
+  transition: opacity 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:hover .title {
+    letter-spacing: 1px;
+  }
+}
+
+.title {
+  letter-spacing: 0px;
+  transition: letter-spacing 0.1s ease-in-out;
+}
+
+.dots {
+  height: 0.9em;
+  margin: 0px 10px;
+  border-bottom: 2px dotted black;
+  grid-area: 'b';
+}
+
+.favicon {
+  height: 29px;
+  margin: 3px;
+  aspect-ratio: 1;
+  background-color: $background;
+  border: $border;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  grid-row: span 2;
+  margin-right: 8px;
+}
+
+.description {
+  opacity: 0.5;
+  font-style: italic;
+  margin-left: 5px;
+  grid-column: span 3;
+  font-size: 14px;
+}

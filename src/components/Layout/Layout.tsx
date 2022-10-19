@@ -37,7 +37,11 @@ const Layout: React.FC<LayoutProps> = function Layout({ children }) {
           <div></div>
           <div className={s.inner_printing_block}></div>
         </div>
-        <div className={s.content_container}>{children}</div>
+        <div className={s.content_container}>
+          {children}
+          <div className={s.top_scroll_gradient}></div>
+          <div className={s.lower_scroll_gradient}></div>
+        </div>
         <div className={s.printing_row}>
           <div>/index.html</div>
           <div>1</div>
