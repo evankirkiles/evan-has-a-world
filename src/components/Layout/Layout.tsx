@@ -49,6 +49,7 @@ const Layout: React.FC<LayoutProps> = function Layout({ children }) {
         </div>
         <div className={s.printing_block}></div>
       </div>
+      <div className={s.outline_overlay}></div>
     </div>
   );
 };

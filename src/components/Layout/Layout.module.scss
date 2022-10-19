@@ -143,3 +143,15 @@ $outline_offset: 15px;
   bottom: 0;
   background: linear-gradient(0deg, $background 30%, transparent 100%);
 }
+
+$outline_padding: 5px;
+.outline_overlay {
+  position: fixed;
+  top: $outline_padding;
+  left: $outline_padding;
+  width: calc(100% - $outline_padding * 2);
+  height: calc(100% - $outline_padding * 2);
+  border: 1px solid #303030;
+  z-index: 3;
+  pointer-events: none;
+}
