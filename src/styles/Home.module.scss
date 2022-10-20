@@ -15,7 +15,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow-y: scroll;
-  padding: 0px 10px;
+  padding: 50px 10px;
 
   @include respond-to('xsmall') {
     width: 80%;
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15%;
+  margin-top: 10%;
   background-color: $background;
   z-index: 1;
 

@@ -94,13 +94,18 @@ $outline_offset: 15px;
   width: 100%;
   height: 20px;
   background-color: $foreground;
+  z-index: 1;
 }
 
 .content_container {
   flex: 1;
   width: 100%;
+  height: 100%;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .printing_row {
@@ -119,6 +124,15 @@ $outline_offset: 15px;
   & > *:nth-of-type(3) {
     place-self: end end;
   }
+}
+
+.printing_info_row {
+  @extend .printing_row;
+  background-color: $background;
+  z-index: 1;
+  padding: 3px;
+  border: 1px solid $foreground;
+  // box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .inner_printing_block {
@@ -154,4 +168,23 @@ $outline_padding: 5px;
   border: 1px solid #303030;
   z-index: 3;
   pointer-events: none;
+}
+
+.desk_image {
+  position: absolute;
+  right: 0px;
+  bottom: 10%;
+  height: 70%;
+}
+
+.desk_image_left {
+  @extend .desk_image;
+  right: unset;
+  left: 0px;
+}
+
+.desk_image_container {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 0.564;
 }
